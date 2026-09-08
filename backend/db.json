@@ -1,0 +1,181 @@
+{
+  "roles": [
+    { "idRol": 1, "nombre": "Cliente" },
+    { "idRol": 2, "nombre": "Domiciliario" },
+    { "idRol": 3, "nombre": "Panadero" }
+  ],
+  "clientes": [
+    {
+      "idCliente": 1,
+      "tipoCliente": "Frecuente",
+      "direccion": "Calle 10 # 15-20, Soacha"
+    },
+    {
+      "idCliente": 2,
+      "tipoCliente": "Ocasional",
+      "direccion": "Carrera 7 # 45-12, Bogotá"
+    }
+  ],
+  "domiciliarios": [
+    { "idDomiciliario": 1, "estadoDisponibilidad": "Disponible" },
+    { "idDomiciliario": 2, "estadoDisponibilidad": "Ocupado" }
+  ],
+  "panaderos": [
+    { "idPanadero": 1, "estadoActividad": "Activo" },
+    { "idPanadero": 2, "estadoActividad": "Inactivo" }
+  ],
+  "usuarios": [
+    {
+      "idUsuario": 1,
+      "nombre": "Carlos",
+      "apellido": "Mendoza",
+      "correo": "carlos.mendoza@email.com",
+      "contrase\u00f1a": "$2a$12$eImiTXuWVxfM37uY4JANjOL.88T9q7X62N.21h25eB1...",
+      "telefono": "3001234567",
+      "estado": "Activo",
+      "Rol_idRol": 1,
+      "cliente_idCliente": 1,
+      "panadero_idPanadero": null,
+      "domiciliario_idDomiciliario": null
+    },
+    {
+      "idUsuario": 2,
+      "nombre": "Andr\u00e9s",
+      "apellido": "G\u00f3mez",
+      "correo": "andres.gomez@email.com",
+      "contrase\u00f1a": "$2a$12$eImiTXuWVxfM37uY4JANjOL.88T9q7X62N.21h25eB2...",
+      "telefono": "3119876543",
+      "estado": "Activo",
+      "Rol_idRol": 2,
+      "cliente_idCliente": null,
+      "panadero_idPanadero": null,
+      "domiciliario_idDomiciliario": 1
+    }
+  ],
+  "productos": [
+    {
+      "idProducto": 1,
+      "nombre": "Pan Blandito",
+      "precio": 500.0,
+      "estado": "Disponible",
+      "descripcion": "Pan fresco artesanal por unidad"
+    },
+    {
+      "idProducto": 2,
+      "nombre": "Croissant de Queso",
+      "precio": 2500.0,
+      "estado": "Disponible",
+      "descripcion": "Croissant hojaldrado relleno de queso"
+    }
+  ],
+  "inventarios": [
+    {
+      "idInventario": 1,
+      "stockMinimo": 20,
+      "stockActual": 150,
+      "producto_idProducto": 1
+    },
+    {
+      "idInventario": 2,
+      "stockMinimo": 10,
+      "stockActual": 45,
+      "producto_idProducto": 2
+    }
+  ],
+  "pedidos": [
+    {
+      "idPedido": 1,
+      "fechaHoraCreacion": "2026-09-08T08:30:00",
+      "fechaHoraEntregaEstimada": "2026-09-08T09:15:00",
+      "estadoPedido": "En Camino",
+      "cliente_idCliente": 1,
+      "domiciliario_idDomiciliario": 1
+    },
+    {
+      "idPedido": 2,
+      "fechaHoraCreacion": "2026-09-08T09:00:00",
+      "fechaHoraEntregaEstimada": "2026-09-08T09:45:00",
+      "estadoPedido": "Pendiente",
+      "cliente_idCliente": 2,
+      "domiciliario_idDomiciliario": null
+    }
+  ],
+  "detalles_pedidos": [
+    {
+      "idDetalle_Pedido": 1,
+      "precioFijo": 500.0,
+      "cantidad": 10,
+      "pedido_idPedido": 1,
+      "producto_idProducto": 1
+    },
+    {
+      "idDetalle_Pedido": 2,
+      "precioFijo": 2500.0,
+      "cantidad": 2,
+      "pedido_idPedido": 1,
+      "producto_idProducto": 2
+    }
+  ],
+  "recibos": [
+    {
+      "idRecibo": 1,
+      "totalPagar": 10000.0,
+      "fechaEmision": "2026-09-08T08:31:00",
+      "pedido_idPedido": 1
+    },
+    {
+      "idRecibo": 2,
+      "totalPagar": 5000.0,
+      "fechaEmision": "2026-09-08T09:01:00",
+      "pedido_idPedido": 2
+    }
+  ],
+  "rutasEntrega": [
+    {
+      "idRutasEntrega": 1,
+      "estadoRuta": "En Progreso",
+      "urlRutaGoogle": "https://maps.google.com/?q=route1",
+      "domiciliarios_idDomiciliario": 1
+    },
+    {
+      "idRutasEntrega": 2,
+      "estadoRuta": "Pendiente",
+      "urlRutaGoogle": "https://maps.google.com/?q=route2",
+      "domiciliarios_idDomiciliario": 2
+    }
+  ],
+  "rutasParada": [
+    {
+      "idRutasParada": 1,
+      "rutasEntrega_idRutasEntrega": 1,
+      "pedidos_idPedido": 1,
+      "ordenEntrega": 1,
+      "estadoParada": "Pendiente"
+    },
+    {
+      "idRutasParada": 2,
+      "rutasEntrega_idRutasEntrega": 1,
+      "pedidos_idPedido": 2,
+      "ordenEntrega": 2,
+      "estadoParada": "Pendiente"
+    }
+  ],
+  "movimientos": [
+    {
+      "idMovimiento": 1,
+      "tipoMovimiento": "Entrada",
+      "cantidad": 100,
+      "fechaHora": "2026-09-08T06:00:00",
+      "panadero_idPanadero": 1,
+      "producto_idProducto": 1
+    },
+    {
+      "idMovimiento": 2,
+      "tipoMovimiento": "Salida",
+      "cantidad": 10,
+      "fechaHora": "2026-09-08T08:30:00",
+      "panadero_idPanadero": null,
+      "producto_idProducto": 1
+    }
+  ]
+}
