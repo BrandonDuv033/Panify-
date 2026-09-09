@@ -163,7 +163,7 @@
   "movimientos": [
     {
       "idMovimiento": 1,
-      "tipoMovimiento": "Entrada",
+      "tipoMovimiento": "Salida",
       "cantidad": 100,
       "fechaHora": "2026-09-08T06:00:00",
       "panadero_idPanadero": 1,
@@ -171,7 +171,7 @@
     },
     {
       "idMovimiento": 2,
-      "tipoMovimiento": "Salida",
+      "tipoMovimiento": "Entrada",
       "cantidad": 10,
       "fechaHora": "2026-09-08T08:30:00",
       "panadero_idPanadero": null,
